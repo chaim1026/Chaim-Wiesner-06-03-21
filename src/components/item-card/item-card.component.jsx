@@ -3,8 +3,9 @@ import './item-card.styles.scss';
 import { connect } from 'react-redux';
 import CustomButton from '../custom-button/custom-button.component';
 import { addItem } from '../../redux/items/items.actions';
+import { addStoreInfo } from '../../redux/stores/stores.actions';
 
-const ItemCard = ({ item, addItem }) => {
+const ItemCard = ({ item, addItem, addStoreInfo }) => {
     const { name, price, imageUrl, onlineStore, deliveryDate } = item;
     return (
     <div className='item-card'>
@@ -24,12 +25,13 @@ const ItemCard = ({ item, addItem }) => {
             </div>
             <span className='delivery-date'>EST Delivery Date: {deliveryDate}</span>
         </div>
-        <CustomButton onClick={() => addItem(item)} inverted > Add To Items List </CustomButton>
+        <CustomButton onClick={() => {addItem(item); addStoreInfo(item)}} inverted > Add To Items List </CustomButton>
     </div>
 )};
 
 const mapDispatchToProps = dispatch => ({
-    addItem: item => dispatch(addItem(item))
+    addItem: item => dispatch(addItem(item)),
+    addStoreInfo: item => dispatch(addStoreInfo(item)),
 })
 
 export default connect(null, mapDispatchToProps)(ItemCard);

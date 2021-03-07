@@ -12,17 +12,17 @@ const Header = () => {
 
     return (
     <div className='header-items'>
-        <Link className='company' to='/' onClick={() => openBurgerMenu(clicked)}>
+        <Link className='company' to='/'>
             <h3 className='company-name'>TRACKING APP</h3>
         </Link>
         <div className='burger-menu' onClick={() => openBurgerMenu(clicked)}>
             <i className={clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
         </div>
         <div className={clicked ? 'nav-menu active' : 'nav-menu'}>
-            <Link className='option' to='/bought-items' onClick={() => openBurgerMenu(clicked)}>
+            <Link className='option' to='/bought-items'>
                 Bought Items
             </Link>
-            <Link className='option' to='/delivered-items-list' onClick={() => openBurgerMenu(clicked)}>
+            <Link className='option' to='/delivered-items-list'>
                 Delivered Items
             </Link>
         </div>
