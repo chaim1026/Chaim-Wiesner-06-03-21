@@ -1,0 +1,110 @@
+@import "../../breakpoints/breakpoints.scss";
+
+.header-items {
+  background: linear-gradient(
+    90deg,
+    rgb(153, 153, 102) 0%,
+    rgb(102, 102, 51) 100%
+  );
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  @include media("<=tablet") {
+    position: relative;
+  }
+
+  .company {
+    color: #fff;
+    justify-self: start;
+    margin-left: 20px;
+    cursor: pointer;
+    @include media("<=tablet") {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      font-size: 15px;
+    }
+  }
+
+  .fa-bars {
+    color: #fff;
+  }
+
+  .fa-times {
+    color: #fff;
+    font-size: 2rem;
+  }
+
+  .burger-menu {
+    display: none;
+
+    @include media("<=tablet") {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 1.8rem;
+      cursor: pointer;
+      transform: translate(-100%, 60%);
+    }
+  }
+
+  .nav-menu {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-gap: 10px;
+    text-align: center;
+    width: 70vw;
+    justify-content: end;
+    margin-right: 2rem;
+
+    @include media("<=tablet") {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 200px;
+      position: absolute;
+      top: 80px;
+      left: -100%;
+      opacity: 1;
+      transition: all 0.5s ease;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &.active {
+      @include media("<=tablet") {
+        background: grey;
+        left: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 1;
+      }
+    }
+
+    .option {
+      color: white;
+      padding: 0.5rem 1rem;
+
+      &:hover {
+        font-size: 25px;
+        color: black;
+      }
+
+      @include media("<=tablet") {
+        text-align: center;
+        padding: 1rem;
+        width: 100%;
+        display: table;
+        font-size: 25px;
+
+        &:hover {
+          color: black;
+        }
+      }
+    }
+  }
+}
