@@ -3,6 +3,7 @@ import './bought-items-list.styles.scss';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { selectItemsList, selectItemsListTotal } from '../../redux/items/items.selectors';
+import Currencies from '../../components/currencies/currencies.component';
 import BoughtItem from '../../components/bought-item/bought-item.component';
 
 const BoughtItemsList = ({ itemsList, total }) => (
@@ -18,6 +19,7 @@ const BoughtItemsList = ({ itemsList, total }) => (
         <div className='bought-items-list-total'>
             <span>TOTAL: ${total}</span>
         </div>
+        <Currencies total={total} />
     </div>
 );
 

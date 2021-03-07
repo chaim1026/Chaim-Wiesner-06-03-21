@@ -2,7 +2,7 @@ import ItemsActionTypes from './items.types';
 import { addItemToItemsList } from './items.utils';
 
 const INITIAL_STATE = {
-    itemsList: []
+    itemsList: [],
 };
 
 const itemsReducer = (state = INITIAL_STATE, action) => {

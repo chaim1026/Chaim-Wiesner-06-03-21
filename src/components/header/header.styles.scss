@@ -21,6 +21,10 @@
     justify-self: start;
     margin-left: 20px;
     cursor: pointer;
+
+    &:hover {
+      color: black;
+    }
     @include media("<=tablet") {
       position: absolute;
       top: 10px;

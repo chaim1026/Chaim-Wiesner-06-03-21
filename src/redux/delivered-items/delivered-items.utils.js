@@ -11,5 +11,11 @@ export const addItemToDeliveredList = (deliveredItemsList, itemToAdd) => {
         )
     }
 
-    return [...deliveredItemsList, {...itemToAdd, quantity: 1}]
+    const purchased = [...deliveredItemsList, {...itemToAdd, quantity: 1}]
+
+    console.log(purchased)
+    const sortedItems = purchased.sort((a, b) => 
+    a.deliveryDate.split('/').reverse().join().localeCompare(b.deliveryDate.split('/').reverse().join()));
+
+    return sortedItems
 };

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './bought-items.styles.scss';
-import Directory from '../../components/directory/directory.components';
 import { Tabs, Tab } from '@material-ui/core';
 import BoughtItemsList from '../bought-items-list/bought-items-list.component';
+import StoresList from '../stores-list/stores-list.component';
 import ItemsIcon from '../../components/items-icon/items-icon.component';
 
 const BoughtItems = (props) => {
@@ -28,15 +28,13 @@ const BoughtItems = (props) => {
     
     return (
     <div className='bought-items'>
-        {/* <Directory /> */}
-
-
         <Tabs value={selectedTab} onChange={handleChange}>
             <Tab label={<ItemsIcon/>} />
             <Tab label='Stores List' />
         </Tabs>
 
         {selectedTab === 0 && <BoughtItemsList />}
+        {selectedTab === 1 && <StoresList />}
     
     </div>
 )};
