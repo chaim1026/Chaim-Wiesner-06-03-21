@@ -7,14 +7,14 @@ const DropdownMenu = ({ currencies, total }) => {
         <div className='drop-component'>
         
             <div className='drop-wrapper'>
-                <label htmlFor='btn' className='car-dropdown-button'>Currencies
+                <label htmlFor='btn' className='dropdown-button'>Currencies
                     <span className='fas fa-chevron-down'></span>
                 </label>
-                <input className='car-drop-input' type='checkbox' id='btn'></input>
+                <input className='drop-input' type='checkbox' id='btn'></input>
                 <ul className='menu'>
-                        {currencies.map((currency, index) => (
-                            <li htmlFor='btn-2' className='first' key={index}>{currency.symbol} - {(currency.rate * total).toFixed(3)}</li>
-                        ))}
+                    {currencies.map((currency, index) => (
+                        <li htmlFor='btn-2' className='first' key={index}>{currency.symbol} - {(currency.rate * total).toFixed(3)}</li>
+                    ))}
                 </ul>
             </div>
         </div>

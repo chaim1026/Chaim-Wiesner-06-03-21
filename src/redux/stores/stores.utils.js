@@ -6,7 +6,7 @@ export const addStoreAndAggregatedProfit = (storesList, storeToAdd) => {
     if (existingOnlineStore) {
         return storesList.map(store =>
             store.onlineStore === storeToAdd.onlineStore
-                ? {...store, sum: store.sum + store.price}
+                ? {...store, sum: store.sum + storeToAdd.price}
                 : store
         )
     }
