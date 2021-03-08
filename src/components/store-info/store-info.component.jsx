@@ -3,7 +3,7 @@ import './store-info.styles.scss';
 
 const StoreInfo = ({ store }) => (
     <div className='store-info'>
-        <div>{(store.onlineStore).toUpperCase()}</div>
+        <div className='store-name'>{(store.onlineStore).toUpperCase()}</div>
         <div>{store.sum}$</div>
     </div>
 );

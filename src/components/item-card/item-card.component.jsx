@@ -23,7 +23,9 @@ const ItemCard = ({ item, addItem, addStoreInfo }) => {
                 <span className='name'>{name}</span>
                 <span className='price'>${price}</span>
             </div>
-            <span className='delivery-date'>EST Delivery Date: {deliveryDate}</span>
+            <div>
+                <span className='delivery-date'>EST Delivery: {deliveryDate}</span>
+            </div>
         </div>
         <CustomButton onClick={() => {addItem(item); addStoreInfo(item)}} inverted > Add To Items List </CustomButton>
     </div>

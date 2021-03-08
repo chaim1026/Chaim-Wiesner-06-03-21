@@ -31,6 +31,10 @@
       left: 0;
       font-size: 15px;
     }
+
+    @include media("<=phone") {
+      display: none;
+    }
   }
 
   .fa-bars {
@@ -65,6 +69,22 @@
     justify-content: end;
     margin-right: 2rem;
 
+    .display-on-phone {
+      display: none;
+
+      @include media("<=phone") {
+        display: block;
+        color: white;
+        padding: 0.5rem 1rem;
+        font-size: 25px;
+
+        &:hover {
+          font-size: 25px;
+          color: black;
+        }
+      }
+    }
+
     @include media("<=tablet") {
       display: flex;
       flex-direction: column;
@@ -77,6 +97,10 @@
       transition: all 0.5s ease;
       justify-content: center;
       align-items: center;
+    }
+
+    @include media("<=phone") {
+      height: 300px;
     }
 
     &.active {

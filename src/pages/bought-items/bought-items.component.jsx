@@ -30,7 +30,7 @@ const BoughtItems = (props) => {
     <div className='bought-items'>
         <Tabs value={selectedTab} onChange={handleChange}>
             <Tab label={<ItemsIcon/>} />
-            <Tab label='Stores List' />
+            <Tab label='Stores' />
         </Tabs>
 
         {selectedTab === 0 && <BoughtItemsList />}

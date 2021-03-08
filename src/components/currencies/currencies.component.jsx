@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import './currencies.styles.scss';
 import axios from 'axios'
 import DropdownMenu from '../dropdown-menu/dropdown-menu.component';
+import ErrorMessage from '../error-message/error-message.component';
 
 const Currencies = ({ total }) => {
 
     const [currencies, setCurrencies] = useState([]);
+    const [error, setError] = useState('')
 
     const getCurrencies = async () => {
         try {
@@ -17,9 +19,8 @@ const Currencies = ({ total }) => {
                 ratesList.push({symbol, rate})
             }
             setCurrencies(ratesList)
-            console.log('10 secs')
         } catch (err) {
-            console.log(err.message);
+            setError(err.message)
         }
     };
 
@@ -34,11 +35,11 @@ const Currencies = ({ total }) => {
 
     }, [])
 
+
     return (
         <div className='currencies'>
-        {
-            total !== 0 ? <DropdownMenu currencies={currencies} total={total} /> : null
-        }
+            {total !== 0 && error === '' ? <DropdownMenu currencies={currencies} total={total} /> : null}
+            {error ? <ErrorMessage messages={error} /> : null}
         </div>
     )
 }

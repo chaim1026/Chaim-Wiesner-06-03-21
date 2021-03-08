@@ -19,6 +19,9 @@ const Header = () => {
             <i className={clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
         </div>
         <div className={clicked ? 'nav-menu active' : 'nav-menu'}>
+            <Link className='display-on-phone' to='/'>
+                <span onClick={openBurgerMenu}>TRACKING APP</span>
+            </Link>
             <Link className='option' to='/bought-items'>
                 <span onClick={openBurgerMenu}>Bought Items</span>
             </Link>

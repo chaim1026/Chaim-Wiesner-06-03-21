@@ -1,7 +1,20 @@
+@import "../../breakpoints/breakpoints.scss";
+
 .store-info {
   width: 60vw;
   display: flex;
   justify-content: space-around;
   font-size: 30px;
   margin: 40px;
+
+  @include media("<=phone") {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .store-name {
+    @include media("<=phone") {
+      border-bottom: 3px solid rgb(44, 92, 44);
+    }
+  }
 }

@@ -1,18 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 import ItemsCollection from '../../components/items-collection/items-collection.component';
+import { selectCollections } from '../../redux/shop/shop.selectors';
 
-const ShopItems = ({ shopProducts }) => (
+const ShopItems = ({ collections }) => (
     <div className="shop-page">
-        {shopProducts.map(({ id, ...otherCollectionProps}) => (
+        {collections.map(({ id, ...otherCollectionProps}) => (
             <ItemsCollection key={id} {...otherCollectionProps} />
         ))}
     </div>
 );
 
 
-const mapStateToProps = (state) => ({
-    shopProducts: state.products.allProducts
+const mapStateToProps = createStructuredSelector({
+    collections: selectCollections
 });
 
 export default connect(mapStateToProps)(ShopItems);
