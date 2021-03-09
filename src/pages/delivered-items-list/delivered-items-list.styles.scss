@@ -1,3 +1,5 @@
+@import "../../breakpoints/breakpoints.scss";
+
 .delivered-items-list {
   width: 55%;
   min-height: 90vh;
@@ -6,24 +8,13 @@
   align-items: center;
   margin: 50px auto 0;
 
-  .delivered-items-list-header {
-    .header-block {
-      text-transform: capitalize;
-      width: 23%;
-
-      &:last-child {
-        width: 8%;
-      }
+  .header-text {
+    @include media("<=phone") {
+      font-size: 20px;
     }
   }
 
   .custom-button {
     display: none;
   }
-
-  //   .total {
-  //     margin-top: 30px;
-  //     margin-left: auto;
-  //     font-size: 36px;
-  //   }
 }

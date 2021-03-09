@@ -1,11 +1,10 @@
 @import "../../breakpoints/breakpoints.scss";
 
 .drop-component {
-  margin: 20px auto;
+  margin-left: 10px;
 
   .drop-wrapper {
     position: relative;
-    /* transform: translate(-50%, -50%); */
     background-color: white;
     width: 20vw;
     line-height: 40px;
@@ -14,12 +13,8 @@
     border: 3px solid #999966;
 
     @include media("<tablet") {
-      width: 45vw;
+      width: 40vw;
     }
-
-    // @include media("<phone") {
-    //   width: 55vw;
-    // }
   }
 
   .drop-wrapper label {
@@ -57,12 +52,8 @@
     border-radius: 3px;
     display: none;
     @include media("<tablet") {
-      width: 45vw;
+      width: 40vw;
     }
-
-    // @include media("<phone") {
-    //   width: 55vw;
-    // }
   }
 
   .menu {

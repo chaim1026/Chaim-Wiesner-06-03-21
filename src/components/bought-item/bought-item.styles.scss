@@ -1,8 +1,8 @@
 .bought-item {
-  width: 100%;
+  width: 80vw;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   min-height: 100px;
   border-bottom: 1px solid darkgrey;
   padding: 15px 0;
@@ -10,7 +10,7 @@
   align-items: center;
 
   .image-container {
-    width: 100px;
+    width: 150px;
 
     img {
       width: 100%;
@@ -18,8 +18,14 @@
     }
   }
 
+  .price-btn {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
   .info-container {
-    margin: 10px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -35,17 +41,32 @@
   .price,
   .online-store,
   .est-delivery {
-    width: 100px;
+    width: 150px;
+    margin: 5px;
+    font-size: 30px;
   }
 
-  .quantity {
-    padding-left: 20px;
+  .name {
+    font-weight: 900;
+  }
+
+  .amount {
+    font-weight: 700;
+    color: rgb(33, 68, 33);
+  }
+
+  .price {
+    margin-bottom: 50px;
+    font-size: 40px;
+    font-weight: 900;
+    color: rgb(33, 68, 33);
   }
 
   .custom-button {
     width: 50px;
     opacity: 0.7;
     top: 220px;
+    outline: none;
   }
 
   &:hover {

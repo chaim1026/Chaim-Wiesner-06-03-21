@@ -1,3 +1,5 @@
+@import "../../breakpoints/breakpoints.scss";
+
 .bought-items-list {
   width: 55%;
   min-height: 90vh;
@@ -6,20 +8,21 @@
   align-items: center;
   margin: 50px auto 0;
 
-  .bought-items-list-header {
-    .header-block {
-      text-transform: capitalize;
-      width: 23%;
-
-      &:last-child {
-        width: 8%;
-      }
+  .header-text {
+    @include media("<=phone") {
+      font-size: 20px;
     }
   }
 
-  .total {
+  .bought-items-list-total {
+    width: 80vw;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
     margin-top: 30px;
-    margin-left: auto;
-    font-size: 36px;
+
+    .total {
+      font-size: 40px;
+    }
   }
 }

@@ -9,7 +9,7 @@ import BoughtItem from '../../components/bought-item/bought-item.component';
 const BoughtItemsList = ({ itemsList, total }) => (
     <div className='bought-items-list'>
         <div className='bought-items-list-header'>
-            <h2>Bought Items List</h2>
+            <h2 className='header-text'>Bought Items List</h2>
         </div>
         <div>
             {itemsList.map(item => 
@@ -17,9 +17,9 @@ const BoughtItemsList = ({ itemsList, total }) => (
             )}
         </div>
         <div className='bought-items-list-total'>
-            <span>TOTAL: ${total}</span>
+            <span className='total'>TOTAL: {total}$</span>
+            <Currencies total={total} />
         </div>
-        <Currencies total={total} />
     </div>
 );
 

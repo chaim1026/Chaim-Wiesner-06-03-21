@@ -5,7 +5,6 @@ import './dropdown-menu.styles.scss';
 const DropdownMenu = ({ currencies, total }) => {
     return (
         <div className='drop-component'>
-        
             <div className='drop-wrapper'>
                 <label htmlFor='btn' className='dropdown-button'>Currencies
                     <span className='fas fa-chevron-down'></span>

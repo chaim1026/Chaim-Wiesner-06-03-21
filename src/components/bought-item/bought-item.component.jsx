@@ -13,26 +13,15 @@ const BoughtItem = ({ item, itemWasDelivered, toDelivered }) => {
             <img src={imageUrl} alt='item' />
         </div>
         <div className='info-container'>
-            <span className='description info'>Description</span>
             <span className='name'>{name}</span>
-        </div>
-        <div className='info-container'>
-            <span className='item-quantity info'>Quantity</span>
-            <span className='amount'>{quantity}</span>
-        </div>
-        <div className='info-container'>
-            <span className='store-name info'>Online Store</span>
+            <span className='amount'>x {quantity}</span>
             <span className='online-store'>{onlineStore}</span>
-        </div>
-        <div className='info-container'>
-            <span className='delivery-date info'>Delivery Date</span>
             <span className='est-delivery'>{deliveryDate}</span>
         </div>
-        <div className='info-container'>
-            <span className='item-price info'>Price</span>
-            <span className='price'>{price}</span>
+        <div className='price-btn'>
+            <span className='price'>{price}$</span>
+            <CustomButton onClick={() => {itemWasDelivered(item); toDelivered(item)}}> Item Delivered </CustomButton>
         </div>
-        <CustomButton onClick={() => {itemWasDelivered(item); toDelivered(item)}}> Item Delivered </CustomButton>
     </div>
 )};
 

@@ -6,7 +6,7 @@ import BoughtItem from '../../components/bought-item/bought-item.component';
 const DeliveredItemsList = ({ deliveredItems }) => (
     <div className='delivered-items-list'>
         <div className='delivered-items-list-header'>
-            <h2>Delivered Item List</h2>
+            <h2 className='header-text'>Delivered Item List</h2>
         </div>
         {deliveredItems.map(item => 
             <BoughtItem key={item.id} item={item} />

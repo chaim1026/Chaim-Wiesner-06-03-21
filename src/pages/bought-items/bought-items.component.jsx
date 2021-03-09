@@ -19,6 +19,7 @@ const BoughtItems = (props) => {
         items: 0,
         stores: 1
       };
+      
     const [selectedTab, setSelectedTab] = useState(indexToTabName[page]);
 
     const handleChange = (event, newValue) => {
@@ -30,7 +31,7 @@ const BoughtItems = (props) => {
     <div className='bought-items'>
         <Tabs value={selectedTab} onChange={handleChange}>
             <Tab label={<ItemsIcon/>} />
-            <Tab label='Stores' />
+            <Tab label={<i className="fas fa-store-alt"></i>} />
         </Tabs>
 
         {selectedTab === 0 && <BoughtItemsList />}
