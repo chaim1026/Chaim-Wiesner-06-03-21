@@ -1,21 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './item-card.styles.scss';
 import { connect } from 'react-redux';
 import CustomButton from '../custom-button/custom-button.component';
 import { addItem } from '../../redux/items/items.actions';
 import { addStoreInfo } from '../../redux/stores/stores.actions';
 import FlashMessage from '../flash-message/flash-message.componet';
+import { TrueFalseHook } from '../true-false-hook/true-false-hook.component';
 
 const ItemCard = ({ item, addItem, addStoreInfo }) => {
     const { name, price, imageUrl, onlineStore, deliveryDate } = item;
 
-    const [show, setShow] = useState(false);
+    const { clicked, flipClicked } = TrueFalseHook();
 
     const handleClick = (item) => {
         addItem(item);
         addStoreInfo(item);
-        setShow(true);
-        setInterval(function(){setShow(false);},4000);
+        flipClicked();
+        setInterval(function(){flipClicked(true);},5000);
     };
 
     return (
@@ -41,7 +42,7 @@ const ItemCard = ({ item, addItem, addStoreInfo }) => {
             </div>
         </div>
         <CustomButton onClick={() => handleClick(item)} inverted > Add To Items List </CustomButton>
-        {show === true ? <FlashMessage message='Item Added' /> : ''}
+        {clicked === true ? <FlashMessage message='Item Added' /> : ''}
     </div>
 )};
 

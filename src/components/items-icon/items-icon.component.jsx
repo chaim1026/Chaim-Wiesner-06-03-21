@@ -8,7 +8,7 @@ import { selectItemsListCount } from '../../redux/items/items.selectors';
 const ItemsIcon = ({ itemCount }) => (
     <div className='items-icon'>
         <ItemsListIcon className='items-list-icon' />
-        <span className='item-count'>{ itemCount }</span>
+        <span id='count-status' className='item-count'>{ itemCount }</span>
     </div>
 );
 
