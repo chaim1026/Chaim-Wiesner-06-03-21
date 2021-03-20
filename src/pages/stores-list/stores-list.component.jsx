@@ -1,6 +1,8 @@
 import React from 'react';
 import './stores-list.styles.scss';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+import { selectStoresList } from '../../redux/stores/stores.selectors';
 import StoreInfo from '../../components/store-info/store-info.component';
 
 const StoresList = ({ storesList }) => (
@@ -12,8 +14,8 @@ const StoresList = ({ storesList }) => (
     </div>
 );
 
-const mapStateToProps = (state) => ({
-    storesList: state.stores.storesList
+const mapStateToProps = createStructuredSelector({
+    storesList: selectStoresList
 });
 
 export default connect(mapStateToProps)(StoresList);

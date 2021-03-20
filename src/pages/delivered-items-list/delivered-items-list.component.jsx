@@ -1,6 +1,8 @@
 import React from 'react';
 import './delivered-items-list.styles.scss';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+import { selectDeliveredItemsList } from '../../redux/delivered-items/delivered-items.selectors';
 import BoughtItem from '../../components/bought-item/bought-item.component';
 
 const DeliveredItemsList = ({ deliveredItems }) => (
@@ -14,8 +16,8 @@ const DeliveredItemsList = ({ deliveredItems }) => (
     </div>
 );
 
-const mapStateToProps = (state) => ({
-    deliveredItems: state.deliveredItems.deliveredItemsList,
+const mapStateToProps = createStructuredSelector({
+    deliveredItems: selectDeliveredItemsList,
 })
 
 export default connect(mapStateToProps)(DeliveredItemsList);
